@@ -18,4 +18,4 @@ Content-Type: application/json
 GET http://localhost:5093/api/folha/listar
 
 ###buscar
-GET http://localhost:5152/api/folha/buscar
+GET http://localhost:5093/api/folha/buscar/123.456.789-00/10/2026

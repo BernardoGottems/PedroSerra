@@ -44,28 +44,19 @@ app.MapGet("/api/folha/listar", (
     return Results.Ok(ctx.Folhas.ToList());
 });
 
-/*app.MapGet("/api/folha/buscar/{CPF}/Mes}/{Ano}", (
+app.MapGet("/api/folha/buscar/{CPF}/{Mes}/{Ano}", (
     [FromRoute] string cpf, [FromRoute] int mes, [FromRoute] int ano,
     [FromServices] AppDataContext ctx) =>
-
-    foreach(Folha folhaCadastrada in ctx.Folhas.ToList()){}
-
-
-
 {
-//    Folha? folhaEncontrada = ctx.Folhas.FirstOrDefault(
-//        x => x.CPF == cpf;
-//        x.Mes == mes;
-//        x.Ano == ano;
-//        
-    );
-    if (folhaEncontrada is null)
-    {
-        return Results.NotFound("Folha não encontrada!");
+    foreach(Folha folhaCadastrada in ctx.Folhas.ToList()){
+        if(cpf == folhaCadastrada.CPF && mes== folhaCadastrada.Mes && ano == folhaCadastrada.Ano){
+            return Results.Ok(folhaCadastrada);
+        }
     }
-    return Results.Ok(folhaEncontrada);
+
+    return Results.NotFound("Folha não encontrada!");
 });
-*/
+
 
 
 app.Run();
