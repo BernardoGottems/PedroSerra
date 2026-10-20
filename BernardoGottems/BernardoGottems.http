@@ -1,6 +1,3 @@
-###teste
-GET http://localhost:5093
-
 ### cadastrar
 POST http://localhost:5093/api/folha/cadastrar
 Content-Type: application/json
@@ -8,7 +5,7 @@ Content-Type: application/json
 {
   "nome": "Ana Souza",
   "cpf": "123.456.789-00",
-  "mes": 11,
+  "mes": 10,
   "ano": 2025,
   "horasTrabalhadas": 160,
   "valorHora": 50
@@ -18,4 +15,7 @@ Content-Type: application/json
 GET http://localhost:5093/api/folha/listar
 
 ###buscar
-GET http://localhost:5093/api/folha/buscar/123.456.789-00/10/2026
+GET http://localhost:5093/api/folha/buscar/123.456.789-00/10/2025
+
+###deletar
+DELETE http://localhost:5093/api/folha/remover/123.456.789-00/10/2025
